@@ -18,14 +18,21 @@ export default function Home() {
   }, []);
   return (
     <>
-    <Row gutter={16}>
-      {Array.isArray(campaigns) &&
-        (campaigns as any[]).map((x: string, index: number) => {
-          return <CampaignCard address={x} key={index} />;
-        })}
-    </Row>
-
-      <Link href={`/campaigns/new`}>Create Campaign</Link>
+      <Row gutter={16}>
+        {Array.isArray(campaigns) &&
+          (campaigns as any[]).map((x: string, index: number) => {
+            return <CampaignCard address={x} key={index} />;
+          })}
+      </Row>
+      <div className="flex justify-center">
+        <Link
+          href={`/campaigns/new`}
+          className="flex items-center justify-center px-4 py-2 my-5 font-bold text-white uppercase bg-blue-500 rounded hover:bg-blue-700"
+          type="default"
+        >
+          Create Campaign
+        </Link>
+      </div>
     </>
   );
 }

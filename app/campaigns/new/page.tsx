@@ -22,17 +22,28 @@ export default function CreateCampaign() {
   };
   return (
     <>
-      <h3>Create Campaign</h3>
-      <p>Minimum contribution</p>
-      <Input value={value} onChange={(event) => setValue(event.target.value)} />
-      <Button
-        onClick={(e) => {
-          e.preventDefault();
-          createCampaign();
-        }}
-      >
-        Create
-      </Button>
+      <h3 className="text-2xl font-bold text-center">Create Campaign</h3>
+      <div className="flex justify-center">
+        <div className="">
+          <p className="my-2 font-bold">Minimum contribution</p>
+          <div className="">
+            <Input
+              value={value}
+              onChange={(event) => setValue(event.target.value)}
+            />
+          </div>
+        </div>
+      </div>
+      <div className="flex justify-center my-4">
+        <Button
+          onClick={(e) => {
+            e.preventDefault();
+            createCampaign();
+          }}
+        >
+          Create
+        </Button>
+      </div>
     </>
   );
 }
